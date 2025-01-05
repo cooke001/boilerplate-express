@@ -33,8 +33,20 @@ app.get('/now', function(req, res, next){
     res.send({time: req.time});
 });
 
+app.get("/:word/echo", function(req, res){
+    const { word } = req.params;
+    res.json({
+        echo: word
+    });
+})
 
-
+app.get("/name", function(req, res){
+    console.log(req)
+    var namey = req.query.first + " " + req.query.last;
+    res.json({
+        name: namey
+    });
+});
 
 
 
